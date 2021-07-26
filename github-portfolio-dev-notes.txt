@@ -1,0 +1,26 @@
+
+
+
+#NOTES
+## About create-react-app
+I've been using create-react-app since my first steps with react. But never actually realized the things you need to run a react app when setting yourself the environment, such as configuring webpack and babel.
+
+So in a few words, 'create-react-app' creates a basic setup like the one used in the 'MovieList App' but with only one comand.
+
+Better written articles you can read about this: 
+	- https://reactjs.org/docs/create-a-new-react-app.html#create-react-app
+	- https://create-react-app.dev/
+
+Install the tool with:
+	
+	npm install -g create-react-app
+
+Create a new app with
+	
+	npx create-react-app my-app
+	cd my-app
+	npm start //or yarn start
+
+create-react-app docs
+	- https://create-react-app.dev/docs/getting-started
+
