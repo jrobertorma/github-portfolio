@@ -6,8 +6,8 @@ I've been using create-react-app since my first steps with react. But never actu
 So in a few words, 'create-react-app' creates a basic setup like the one used in the 'MovieList App' but with only one comand.
 
 Better written articles you can read about this: 
-	-[Popular React toolchains](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app)
-	-[CRA Docs](https://create-react-app.dev)
+* [Popular React toolchains](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app)
+* [CRA Docs](https://create-react-app.dev)
 
 Install the tool with:
 	
@@ -21,7 +21,7 @@ Create a new app with
 
 ### Sources
 
-	-[Create react app docs](https://create-react-app.dev/docs/getting-started)
+* [Create react app docs](https://create-react-app.dev/docs/getting-started)
 
 ## About progressive web apps (PWA)
 
@@ -53,7 +53,7 @@ Then, to serve the application run:
 
 ### Sources
 
-	-[Create a PWA with CRA](https://create-react-app.dev/docs/making-a-progressive-web-app)
+* [Create a PWA with CRA](https://create-react-app.dev/docs/making-a-progressive-web-app)
 
 ## About Github API
 
@@ -64,4 +64,29 @@ We can retrieve public GitHub information from GitHub by calling this endpoint:
 If we use [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) or [axios](https://axios-http.com/docs/intro) to call that endpoint we will be able to render all the public repositories of the github user.
 
 ### Sources
-	-[Github REST API Docs](https://docs.github.com/en/rest)
+
+* [Github REST API Docs](https://docs.github.com/en/rest)
+* [MD Synthax](https://guides.github.com/features/mastering-markdown/)
+
+## About a Github portfolio
+
+The idea is to create a small showcase with links to al public repos and data of a github profile, maybe with some cards.
+
+The App structure will be fairly simple.
+
+* A Header element, with the github logo and app name
+* A Profile element, that will display the user name and its public data
+* A Projects element, that will display the public repos
+
+The project structure will be as follows
+	
+> 	/src
+> 	/components
+> 		/Header
+> 			index.js
+> 		/Profile
+> 			index.js
+> 	/containers
+> 		App.js //root component
+> 		/Projects
+> 			index.js //this will be a container with state and handlers
