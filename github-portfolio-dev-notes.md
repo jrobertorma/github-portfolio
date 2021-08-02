@@ -80,13 +80,13 @@ The App structure will be fairly simple.
 
 The project structure will be as follows
 	
-> 	/src
-> 	/components
-> 		/Header
-> 			index.js
-> 		/Profile
-> 			index.js
-> 	/containers
-> 		App.js //root component
-> 		/Projects
-> 			index.js //this will be a container with state and handlers
+	/src
+	/components
+		/Header
+			index.js
+		/Profile
+			index.js
+	/containers
+		App.js //root component
+		/Projects
+			index.js //this will be a container with state and handlers

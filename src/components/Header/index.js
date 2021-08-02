@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Header = () => {
+const Header = ({userName}) => {
     return (
         <header className="App-header">
-            <h2>Soy header yoyoyoyo</h2>
+            <h2>Soy header yoyoyoyo {userName}</h2>
         </header>
     );
 }
