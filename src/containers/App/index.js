@@ -14,7 +14,7 @@ function App() {
         'Accept' : 'application/vnd.github.v3+json'
     }})
 		.then(response => response.json()) //Converting the response to a JSON object
-		.then( data => { console.log(data);
+		.then( data => {
       setUserData(data);
     })
 		.catch( error => console.error(error));
@@ -23,8 +23,8 @@ function App() {
   return (
     <div className="App">
       <Header userName={userData.name}/>
-      <Profile />
-      <Projects />
+      <Profile profileData={userData}/>
+      <Projects projectsURL={userData.repos_url}/>
     </div>
   );
 }

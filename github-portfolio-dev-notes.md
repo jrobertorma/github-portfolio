@@ -90,3 +90,10 @@ The project structure will be as follows
 		App.js //root component
 		/Projects
 			index.js //this will be a container with state and handlers
+
+### Useful links
+* https://www.pluralsight.com/guides/using-fetch-with-github-api-v3
+* https://reactjs.org/docs/hooks-state.html
+* https://reactjs.org/docs/hooks-rules.html
+* https://reactjs.org/docs/hooks-effect.html
+* https://stackoverflow.com/questions/53120972/how-to-call-loading-function-with-react-useeffect-only-once
