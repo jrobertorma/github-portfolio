@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-const Projects = ({projectsURL}) => {
+const Projects = (props) => {
     const [githubRepos, setGithubRepos] = useState([{}]);
-    
-    //la llamada no funciona, revisa cómo pasar una variable a fetch T.T
+
     useEffect(() => {
-        fetch(projectsURL, { 
+        fetch('https://api.github.com/users/jrobertorma/repos', { 
             headers: {
                 'Accept' : 'application/vnd.github.v3+json'
             }})
@@ -19,9 +18,11 @@ const Projects = ({projectsURL}) => {
     return (
         <div>
             <h4>Soy projects yoyoyooy</h4>
-            {/* {githubRepos.map( (repo)=>{
-                <p>{repo.name}</p>
-            })} */}
+            <ul>
+                { githubRepos.map( (repo)=>{
+                    return <li key={repo.id}>{repo.name}</li>;
+                })}
+            </ul>
         </div>
     );
 }
