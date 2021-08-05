@@ -1,17 +1,35 @@
 import React from 'react';
+import Typography from '@material-ui/core/Typography';
+import { Container } from '@material-ui/core';
 
 const Profile = ({profileData}) => {
     return (
-        <div>
-            <h4>Soy profile yoyoyoyo</h4>
-            <p>html_url:    {profileData.html_url}</p>
-            <p>repos_url:   {profileData.repos_url}</p>
-            <p>name:        {profileData.name}</p>
-            <p>company:     {profileData.company}</p>
-            <p>location:    {profileData.location}</p>
-            <p>email:       {profileData.email}</p>
-            <p>bio:         {profileData.bio}</p>
-        </div>
+        <Container maxWidth="sm">
+            <Typography variant="h4" component="h4" gutterBottom>
+                Profile
+            </Typography>
+            <Typography variant="body1" color="textSecondary" align="justify">
+                html_url: {profileData.html_url}
+            </Typography>
+            <Typography variant="body1" color="textSecondary" align="justify">
+                repos_url: {profileData.repos_url}
+            </Typography>
+            <Typography variant="body1" color="textSecondary" align="justify">
+                name: {profileData.name}
+            </Typography>
+            <Typography variant="body1" color="textSecondary" align="justify">
+                company: {profileData.company}
+            </Typography>
+            <Typography variant="body1" color="textSecondary" align="justify">
+                location: {profileData.location}
+            </Typography>
+            <Typography variant="body1" color="textSecondary" align="justify">
+                email: {profileData.email}
+            </Typography>
+            <Typography variant="body1" color="textSecondary" align="justify">
+                bio: {profileData.bio}
+            </Typography>
+        </Container>
     );
 }
  

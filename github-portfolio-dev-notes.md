@@ -91,6 +91,8 @@ The project structure will be as follows
 		/Projects
 			index.js //this will be a container with state and handlers
 
+The root component will make the API call and pass the github user data as props to the Header, Profile and Projects components.
+
 ### Useful links
 * https://www.pluralsight.com/guides/using-fetch-with-github-api-v3
 * https://reactjs.org/docs/hooks-state.html

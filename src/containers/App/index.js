@@ -5,6 +5,9 @@ import Header from '../../components/Header';
 import Profile from '../../components/Profile';
 import Projects from '../Projects';
 
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
+
 function App() {
   const [userData, setUserData] = useState([{}]);
 
@@ -23,8 +26,14 @@ function App() {
   return (
     <div className="App">
       <Header userName={userData.name}/>
-      <Profile profileData={userData}/>
-      <Projects projectsURL={userData.repos_url}/>
+      <Container>
+        <Box py={3}>
+          <Profile profileData={userData}/>
+        </Box>
+        <Box py={3}>
+          <Projects projectsURL={userData.repos_url}/>
+        </Box>
+      </Container>
     </div>
   );
 }
