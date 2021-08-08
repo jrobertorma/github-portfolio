@@ -15,9 +15,13 @@ const ProfileLink = ({profileLinkData}) => {
 }
 
 const Profile = ({profileData}) => {
-    console.log(profileData); 
     //convertir en array, luego crear un array de objetos del tipo [{profileLinkTitle: 'val', profileLink:'val'}], 
     //luego recorrer nuevo array con map y pasárlo a ProfileLink ;)
+    // const projects = profileData.map( (project) => {
+    //     return project.name;
+    // });
+    const profileKeys = Object.keys(profileData);
+    console.log(profileKeys); 
 
     return (
         <Container maxWidth="sm">
@@ -51,6 +55,7 @@ const Profile = ({profileData}) => {
             <Typography variant="body1" color="textSecondary" align="justify">
                 bio: {profileData.bio}
             </Typography>
+            
         </Container>
     );
 }

@@ -9,7 +9,7 @@ const Projects = (props) => {
                 'Accept' : 'application/vnd.github.v3+json'
             }})
             .then(response => response.json()) //Converting the response to a JSON object
-            .then( data => { console.log(data);
+            .then( data => { //console.log(data);
                 setGithubRepos(data);
             })
             .catch( error => console.error(error));
