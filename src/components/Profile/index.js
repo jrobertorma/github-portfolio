@@ -6,61 +6,46 @@ import { Container } from '@material-ui/core';
 const ProfileLink = ({profileLinkData}) => {
     return (
         <Typography variant="body1" color="textSecondary" align="justify">
-            <strong>{profileLinkData.profileLinkTitle}: </strong> 
-            <Link href={profileLinkData.profileLink} target="_blank" rel="noreferrer">
-                {profileLinkData.profileLink}
+            <strong>{profileLinkData.keyName}: </strong> 
+            <Link href={profileLinkData.keyValue} target="_blank" rel="noreferrer">
+                {profileLinkData.keyValue}
             </Link>
         </Typography>
     );
 }
 
+const filterProfileKeys = (key) => {
+    if( key.keyName === 'html_url' || 
+        key.keyName === 'repos_url' ||
+        key.keyName === 'company' ||
+        key.keyName === 'location' ||
+        key.keyName === 'email' ||
+        key.keyName === 'bio' ){
+        return ( { profileLinkTitle:key.keyName, profileLink:key.keyValue } );
+    }
+}
+
 const Profile = ({profileData}) => {
-    //convertir en array, luego crear un array de objetos del tipo [{profileLinkTitle: 'val', profileLink:'val'}], 
-    const profileKeys = Object.keys(profileData).map(key => ({
+    //convertir en array, luego crear un array de objetos del tipo [{profileLinkTitle: 'val', profileLink:'val'}],
+    //flitrar profileKeys para crear array con las keys que se quieren mostrar (how?, usando filter duh XD)
+    const profileKeys = 
+    Object.keys( profileData ).map( key => ({
         keyName: key,
         keyValue: profileData[key]
-    }));
-
-    //flitrar profileKeys para crear array con las keys que se quieren mostrar (how?)
+    })).filter(filterProfileKeys);
 
     //luego recorrer nuevo array con map y pasárlo a ProfileLink ;)
-    // const projects = profileData.map( (project) => {
-    //     return project.name;
-    // });
+    const projects = profileKeys.map( (project) => {
+        return <ProfileLink key={project.keyName} profileLinkData={project}/>;
+    });
     
     return (
         <Container maxWidth="sm">
             <Typography variant="h4" component="h4" gutterBottom>
                 Profile
             </Typography>
-            <Typography variant="body1" color="textSecondary" align="justify">
-                <strong>Pofile url: </strong> 
-                <Link href={profileData.html_url} target="_blank" rel="noreferrer">
-                    {profileData.html_url}
-                </Link>
-            </Typography>
-            <Typography variant="body1" color="textSecondary" align="justify">
-                <strong>Repositories url: </strong> 
-                <Link href={profileData.repos_url} target="_blank" rel="noreferrer">
-                    {profileData.repos_url}
-                </Link>
-            </Typography>
-            <Typography variant="body1" color="textSecondary" align="justify">
-                <strong>Company: </strong> 
-                <Link href={profileData.company} target="_blank" rel="noreferrer">
-                    {profileData.company}
-                </Link>
-            </Typography>
-            <Typography variant="body1" color="textSecondary" align="justify">
-                location: {profileData.location}
-            </Typography>
-            <Typography variant="body1" color="textSecondary" align="justify">
-                email: {profileData.email}
-            </Typography>
-            <Typography variant="body1" color="textSecondary" align="justify">
-                bio: {profileData.bio}
-            </Typography>
-            
+
+            { projects }
         </Container>
     );
 }
