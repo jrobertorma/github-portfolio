@@ -16,13 +16,18 @@ const ProfileLink = ({profileLinkData}) => {
 
 const Profile = ({profileData}) => {
     //convertir en array, luego crear un array de objetos del tipo [{profileLinkTitle: 'val', profileLink:'val'}], 
+    const profileKeys = Object.keys(profileData).map(key => ({
+        keyName: key,
+        keyValue: profileData[key]
+    }));
+
+    //flitrar profileKeys para crear array con las keys que se quieren mostrar (how?)
+
     //luego recorrer nuevo array con map y pasárlo a ProfileLink ;)
     // const projects = profileData.map( (project) => {
     //     return project.name;
     // });
-    const profileKeys = Object.keys(profileData);
-    console.log(profileKeys); 
-
+    
     return (
         <Container maxWidth="sm">
             <Typography variant="h4" component="h4" gutterBottom>
