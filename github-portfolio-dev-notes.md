@@ -93,9 +93,13 @@ The project structure will be as follows
 
 The root component will make the API call and pass the github user data as props to the Header, Profile and Projects components.
 
+## Useful notes
+
+
 ### Useful links
 * https://www.pluralsight.com/guides/using-fetch-with-github-api-v3
 * https://reactjs.org/docs/hooks-state.html
 * https://reactjs.org/docs/hooks-rules.html
 * https://reactjs.org/docs/hooks-effect.html
 * https://stackoverflow.com/questions/53120972/how-to-call-loading-function-with-react-useeffect-only-once
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)

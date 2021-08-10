@@ -1,4 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import ProjectCard from '../../components/ProjectCard';
+
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+    },
+}));
 
 const Projects = (props) => {
     const [githubRepos, setGithubRepos] = useState([{}]);
@@ -15,15 +33,28 @@ const Projects = (props) => {
             .catch( error => console.error(error));
     }, []);
 
+    const classes = useStyles();
+
     return (
-        <div>
-            <h4>Soy projects yoyoyooy</h4>
-            <ul>
+        <Container className={classes.root}>
+            <Typography variant="h4" component="h4" gutterBottom>
+                Projects
+            </Typography>
+
+            <Grid container spacing={2} alignItems="center" justifyContent="space-around">
                 { githubRepos.map( (repo)=>{
-                    return <li key={repo.id}>{repo.name}</li>;
+                    return (
+                        <Grid item xs={12} sm={6} md={4}>
+                            <Paper className={classes.paper} key={repo.id}>
+                                <ProjectCard projectData={repo}/>
+                            </Paper>
+                        </Grid>);
                 })}
-            </ul>
-        </div>
+            </Grid>
+        </Container>
+
+            
+
     );
 }
  
