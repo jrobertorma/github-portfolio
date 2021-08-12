@@ -45,16 +45,11 @@ const Projects = (props) => {
                 { githubRepos.map( (repo)=>{
                     return (
                         <Grid item xs={12} sm={6} md={4}>
-                            <Paper className={classes.paper} key={repo.id}>
-                                <ProjectCard projectData={repo}/>
-                            </Paper>
+                            <ProjectCard key={repo.id} projectData={repo}/>
                         </Grid>);
                 })}
             </Grid>
         </Container>
-
-            
-
     );
 }
  
