@@ -12,23 +12,22 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 345,
+        maxWidth: 350,
     },
     media: {
-        height: 140,
+        height: 150,
     },
 });
 
 const ProjectCard = ({projectData}) => {
     const classes = useStyles();
 
-    console.log(projectData);
     return ( 
         <Card className={classes.root}>
             <CardActionArea>
             <CardMedia
                 className={classes.media}
-                image="/static/images/cards/contemplative-reptile.jpg"
+                image="GitHub_Logo.png"
                 title="Contemplative Reptile"
             />
             <CardContent>
