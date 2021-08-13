@@ -8,6 +8,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import Link from '@material-ui/core/Link';
+
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -22,6 +24,7 @@ const useStyles = makeStyles({
 const ProjectCard = ({projectData}) => {
     const classes = useStyles();
 
+    console.log(projectData);
     return ( 
         <Card className={classes.root}>
             <CardActionArea>
@@ -40,12 +43,11 @@ const ProjectCard = ({projectData}) => {
             </CardContent>
             </CardActionArea>
             <CardActions>
-            <Button size="small" color="primary">
-                Share
-            </Button>
-            <Button size="small" color="primary">
-                Learn More
-            </Button>
+                <Button size="small" color="primary">
+                    <Link href={projectData.html_url} target="_blank" rel="noreferrer">
+                        Learn More
+                    </Link>
+                </Button>
             </CardActions>
         </Card>
     );

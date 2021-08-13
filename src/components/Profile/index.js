@@ -3,8 +3,14 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { Container } from '@material-ui/core';
 
+/**
+ * ProfileLink gets an object, it the object has a keyValue value (lol) the component
+ * renders the link, if it doesn't then the component doesn't render anything either
+ * see the 'var && <stuffToRender>', that is equivalent to: if (//var exists) { //stuff to render }
+ */
 const ProfileLink = ({profileLinkData}) => {
     return (
+        profileLinkData.keyValue &&
         <Typography variant="body1" color="textSecondary" align="justify">
             <strong>{profileLinkData.keyName}: </strong> 
             <Link href={profileLinkData.keyValue} target="_blank" rel="noreferrer">

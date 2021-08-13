@@ -43,8 +43,8 @@ const Projects = (props) => {
             <Grid container spacing={2} alignItems="center" justifyContent="space-around">
                 { githubRepos.map( (repo)=>{
                     return (
-                        <Grid item xs={12} sm={6} md={4}>
-                            <ProjectCard key={repo.id} projectData={repo}/>
+                        <Grid item xs={12} sm={6} md={4} key={repo.id}>
+                            <ProjectCard projectData={repo}/>
                         </Grid>);
                 })}
             </Grid>
