@@ -95,6 +95,23 @@ The root component will make the API call and pass the github user data as props
 
 ## Useful notes
 
+### Profile component
+This component (src\components\Profile\index.js) gets an object returned by the Github API, the object contains all the user data.
+
+We could render every link we wanted by hand, but this will require a lot of copying and pasting the same piece of code with little variations.
+
+That is why I decided to parse the object into an array and then filter it to create a final array with objects as its items to render every link usign a map() function.
+
+Like this:
+
+	finalArray.map( (item) => {
+		<Link to={item.route}/>
+	});
+
+## Projects component
+
+
+
 
 ### Useful links
 * https://www.pluralsight.com/guides/using-fetch-with-github-api-v3
