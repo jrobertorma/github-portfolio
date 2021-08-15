@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Projects = (props) => {
+const Projects = ({projectsURL}) => {
     const [githubRepos, setGithubRepos] = useState([{}]);
 
     useEffect(() => {

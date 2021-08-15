@@ -24,7 +24,7 @@ const useStyles = makeStyles({
 const ProjectCard = ({projectData}) => {
     const classes = useStyles();
 
-    console.log(projectData);
+    //console.log(projectData);
     return ( 
         <Card className={classes.root}>
             <CardActionArea>

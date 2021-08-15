@@ -108,10 +108,14 @@ Like this:
 		<Link to={item.route}/>
 	});
 
-## Projects component
+### Projects component
+This component (src\containers\Projects\index.js) makes another API call to fecth the github projects of the user.
 
+The response is converted into a JSON object and, using a map() function a <ProjectCard/> component is rendered for each project.
 
+The ProjectCard (src\components\ProjectCard\index.js) renders a card and a link to the project passed as the projectData prop.
 
+Ideally, <Projects/> should be capable of use a prop to create a dynamic API call, but for some obscure reason (it probably has something to do with the useEffect hook) it just cant handle a prop to make the argument programatically dynamic.
 
 ### Useful links
 * https://www.pluralsight.com/guides/using-fetch-with-github-api-v3
